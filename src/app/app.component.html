@@ -1,0 +1,17 @@
+
+<u style="color: ghostwhite;"><h1 style="text-align: center; margin-bottom: 5%; color: ghostwhite; font-size: 90px;margin-top: 5%;">TIC-TAC-TOE</h1></u>
+<div class="board">
+  <button class="cell" *ngFor="let cell of board; index as i" (click)="makeMove(i)" [disabled]="cell || winner ||draw"
+  [ngClass]="{ 'cell-x': cell === 'X', 'cell-o': cell === 'O' }">
+   {{ cell }}
+  </button>
+</div>
+<div *ngIf="winner || draw" class="result">
+
+  <button class="btn" (click)="reset()">Play Again</button>
+</div>
+<!-- <div *ngIf="winner || draw" class="result">
+  <p *ngIf="winner">Player {{ winner }} wins!</p>
+  <p *ngIf="draw">It's a draw!</p>
+  <button class="btn" (click)="reset()" >Play Again</button>
+</div> --> 
